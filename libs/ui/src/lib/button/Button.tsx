@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import { ReactNode, ComponentPropsWithoutRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-export interface ButtonProps {
+export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   color?:
     | 'primary'
     | 'secondary'
@@ -13,7 +13,7 @@ export interface ButtonProps {
   children: ReactNode;
 }
 
-export function Button({ color = 'default', children }: ButtonProps) {
+export function Button({ color = 'default', ...props }: ButtonProps) {
   const colorClass = {
     primary: 'btn-primary',
     secondary: 'btn-secondary',
@@ -25,9 +25,11 @@ export function Button({ color = 'default', children }: ButtonProps) {
   }[color];
 
   return (
-    <button type="button" className={twMerge('btn', colorClass)}>
-      {children}
-    </button>
+    <button
+      type="button"
+      className={twMerge('btn', colorClass)}
+      {...props}
+    ></button>
   );
 }
 
