@@ -10,6 +10,9 @@
     "**/.yarn": true,
     "**/.pnp.*": true
   },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   "eslint.nodePath": ".yarn/sdks",
   "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
@@ -36,5 +39,6 @@
       "icon": "terminal-bash"
     }
   },
-  "terminal.integrated.defaultProfile.windows": "Git Bash"
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "thunder-client.saveToWorkspace": true
 }
